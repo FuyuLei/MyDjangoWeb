@@ -15,13 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.contrib import admin
-from django.urls import path
+
 from .views import hi, r, tag_test
 
+from practice1 import views
+
+
 urlpatterns = [
-    path('hi/<int:w>/<int:c>/', hi),
+    path('hi/<int:n1>/<int:n2>/', hi),
     path('r/<int:start>/<int:stop>/', r),
     path('tag_test/', tag_test),
     path('admin/', admin.site.urls),
+
+    path('posts/', views.index, name='posts_index'),
+    path('posts/new/', views.new, name='posts_new'),
+    path('posts/<int:pk>/', views.show, name='posts_show'),
+    path('posts/edit/<int:pk>/', views.edit, name='posts_edit'),
+    path('posts/delete/<int:pk>/', views.delete, name='posts_delete'),
 ]

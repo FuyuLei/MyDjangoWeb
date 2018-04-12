@@ -1,0 +1,15 @@
+<h1>#{{ post.id }} - {{ post.title }}</h1>
+
+<a href="{% url 'posts_edit' post.id %}">Edit</a>
+
+<hr>
+
+{{ post.content }}
+
+<hr>
+
+<a href="{% url 'posts_delete' post.id %}">Delete</a>
+
+<hr>
+
+<a href="{% url 'posts_index' %}"><< Back to list</a>
