@@ -1,15 +1,19 @@
-<h1>#{{ post.id }} - {{ post.title }}</h1>
+{% extends "layout.html" %}
 
-<a href="{% url 'posts_edit' post.id %}">Edit</a>
+{% block main %}
+    <h1>#{{ post.id }} - {{ post.title }}</h1>
 
-<hr>
+    <hr>
 
-{{ post.content }}
+    {{ post.content }}
 
-<hr>
+    <hr>
 
-<a href="{% url 'posts_delete' post.id %}">Delete</a>
+    <a class="btn btn-outline-success mr-1" href="{% url 'posts:edit' post.id %}">Edit</a>
 
-<hr>
+    <a class="btn btn-outline-danger" href="{% url 'posts:delete' post.id %}">Delete</a>
 
-<a href="{% url 'posts_index' %}"><< Back to list</a>
+    <hr>
+
+    <a class="btn btn-primary" href="{% url 'posts:index' %}"><< Back to list</a>
+{% endblock %}

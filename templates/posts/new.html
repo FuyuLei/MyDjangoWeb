@@ -1,18 +1,11 @@
-<hi>Post New</hi>
+{% extends "layout.html" %}
 
-{% for e in error %}
-    {{ e }}<br>
-{% endfor %}
+{% block main %}
+    <hi>Post New</hi>
 
-<form action="" method="post">
-    {% csrf_token %}
-{#    Title: <input type="text" name="title" required>#}
-{#    <br><br>#}
-{#    Content: <input type="text" name="content" required>#}
-{#    <br><br>#}
+    {% for e in error %}
+        {{ e }}<br>
+    {% endfor %}
 
-    {{ form.as_p }}
-
-
-    <button type="submit">Submit</button>
-</form>
+    {% include "_form.html" %}
+{% endblock %}
