@@ -1,1 +1,1 @@
-MyDjangoWeb-master
+MyDjangoWeb
